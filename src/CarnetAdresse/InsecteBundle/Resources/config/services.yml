@@ -1,0 +1,4 @@
+services:
+#    carnet_adresse_insecte.example:
+#        class: CarnetAdresse\InsecteBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

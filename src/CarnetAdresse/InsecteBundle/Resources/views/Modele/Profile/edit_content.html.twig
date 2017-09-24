@@ -1,0 +1,58 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+<br>
+<br>
+
+{{ form_widget(form) }}
+
+    <div>
+
+        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+
+    </div>
+
+{{ form_end(form) }}
+
+
+
+{#
+{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+{{ form_widget(form) }}
+<table border=1>
+
+    <tr>
+        <td>Age  </td>
+        <td> {{ form_widget(form.age) }}</td>
+
+    </tr>
+
+    <tr>
+        <td>Race</td>
+        <td>{{ form_widget(form.race) }} </td>
+
+    </tr>
+
+    <tr>
+        <td>Famille</td>
+        <td>{{ form_widget(form.famille) }} </td>
+
+    </tr>
+
+    <tr>
+        <td>Nourriture</td>
+        <td>{{ form_widget(form.nourriture) }} </td>
+
+    </tr>
+
+
+    <tr>
+        <td> <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />  </td>
+    </tr>
+
+</table>
+
+{{ form_end(form) }}
+
+#}

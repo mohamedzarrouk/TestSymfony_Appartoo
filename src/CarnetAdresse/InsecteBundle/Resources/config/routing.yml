@@ -1,0 +1,27 @@
+carnet_adresse_insecte_homepage:
+    path:     /index
+    defaults: { _controller: CarnetAdresseInsecteBundle:Default:index }
+
+EditProfile:
+    path:     /editProfil
+    defaults: { _controller: CarnetAdresseInsecteBundle:Insecte:editProfil }
+
+AfficherProfile:
+    path:     /afficheProfil
+    defaults: { _controller: CarnetAdresseInsecteBundle:Insecte:afficheProfil }
+
+Inscription:
+    path:     /inscription
+    defaults: { _controller: CarnetAdresseInsecteBundle:Insecte:inscription }
+
+ListeInsecte:
+    path:     /ListeInsecte
+    defaults: { _controller: CarnetAdresseInsecteBundle:Insecte:list }
+
+AjoutAmi:
+    path:     /Ajout/{id}
+    defaults: { _controller: CarnetAdresseInsecteBundle:Insecte:ajouterAmi }
+
+Supprimer_insecte:
+    path:     /SupprimerInsecte/{id}
+    defaults: { _controller: CarnetAdresseInsecteBundle:Insecte:supprimer }

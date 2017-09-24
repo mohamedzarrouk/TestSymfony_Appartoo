@@ -1,0 +1,45 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<br>
+<br>
+
+<a href="{{ path("EditProfile") }}"> Modifier vos informations</a>
+
+<br>
+<br>
+
+<table border=1>
+    <tr>
+        <td>Adresse Mail </td>
+        <td> {{user.email }}</td>
+
+    </tr>
+
+    <tr>
+        <td>Age  </td>
+        <td> {{user.age }}</td>
+
+    </tr>
+
+    <tr>
+        <td>Race  </td>
+        <td> {{ user.race}}</td>
+
+    </tr>
+
+
+    <tr>
+        <td>Famille </td>
+        <td> {{ user.famille}}</td>
+
+    </tr>
+
+
+    <tr>
+        <td>Nourriture</td>
+        <td> {{ user.nourriture}}</td>
+
+    </tr>
+
+
+</table>

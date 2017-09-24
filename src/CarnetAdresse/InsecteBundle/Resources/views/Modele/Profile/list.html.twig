@@ -1,0 +1,31 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+    <h1>Liste des insectes dans la plate-forme</h1>
+
+    <table border="1">
+        <tr>
+            <td></td>
+            <th>Race</th>
+            <th>Famille</th>
+            <th>Age</th>
+            <th>Nourriture</th>
+        </tr>
+
+        {% for Insecte in insectes  %}
+
+            <tr>
+                <td> {{ Insecte.id }}</td>
+                <td> {{ Insecte.race }}</td>
+                <td> {{ Insecte.famille}}</td>
+                <td> {{ Insecte.age}}</td>
+                <td> {{ Insecte.nourriture}}</td>
+                <td> <a href="{{ path('AjoutAmi',{'id':Insecte.id}) }}"> Ajouter comme ami</a> </td>
+                <td> <a href="{{ path('Supprimer_insecte',{'id':Insecte.id}) }}"> Supprimer</a> </td>
+            </tr>
+
+        {% endfor %}
+
+
+    </table>
+
+
