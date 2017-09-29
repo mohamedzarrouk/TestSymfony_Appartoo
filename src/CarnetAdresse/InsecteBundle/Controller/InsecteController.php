@@ -1,7 +1,8 @@
 <?php
 
 namespace CarnetAdresse\InsecteBundle\Controller;
-
+use CarnetAdresse\InsecteBundle\Entity\Insecte;
+use Symfony\Bridge\Doctrine\Tests\Fixtures\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use FOS\UserBundle\Event\FilterUserResponseEvent;
 use FOS\UserBundle\Event\FormEvent;
@@ -16,7 +17,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Doctrine\Common\Collections\ArrayCollection;
-use CarnetAdresse\InsecteBundle\Entity\Insecte;
+
 
 
 class InsecteController extends Controller
@@ -261,24 +262,30 @@ class InsecteController extends Controller
     {
 
         $user = $this->getUser();
+
         if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('This user does not have access to this section.');
         }
 
             $em = $this->getDoctrine()->getManager();
-
-            $id = $request->get('id');
+            //$id = $request->get('id');
 
             $insecte= $em->getRepository("CarnetAdresseInsecteBundle:Insecte")->find($id);
 
             //Ajout de l'insecte dans la liste d'amis
-            $amis = new ArrayCollection();
+           $idInsecte2= $user->getId();
+           $insecte2= $em->getRepository("CarnetAdresseInsecteBundle:Insecte")->find($idInsecte2);
 
-            $user->addAmis($insecte);
-            $user->setAmis($insecte);
+           $insecte2->ajouterAmis($insecte);
+           $insecte2->setInsect($insecte);
 
-            $user->persist($user);
-            $user->flush();
+           // $insecte->setAmis($insecte2);
+
+
+            $em->persist($user);
+            $em->flush();
+
+        return $this->redirectToRoute('ListeInsecte');
 
     }
 
@@ -293,7 +300,7 @@ class InsecteController extends Controller
         $em = $this->getDoctrine()->getManager();
         $insecte= $em->getRepository("CarnetAdresseInsecteBundle:Insecte")->find($id);
 
-        $em->remove($insecte);
+       // $em->remove($insecte);
         $em->flush();
 
         return $this->redirectToRoute('ListeInsecte');

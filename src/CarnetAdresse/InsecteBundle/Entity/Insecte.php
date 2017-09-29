@@ -46,11 +46,10 @@ class Insecte extends BaseUser
 
     private $nourriture;
 
-
     /**
      * @ORM\OneToMany(targetEntity="Insecte", mappedBy="insect")
      */
-    private $amis;
+    protected $amis;
 
     /**
      *
@@ -59,20 +58,12 @@ class Insecte extends BaseUser
      */
     private $insect;
 
+
+    /**
+     * Constructor.
+     */
     public function __construct() {
         $this->amis = new ArrayCollection();
-    }
-
-    public function addAmis($ami)
-    {
-        $this->amis[] = $ami;
-
-        return $this;
-    }
-
-    public function removeAmis($ami)
-    {
-        $this->amis->removeElement($ami);
     }
 
     /**
@@ -92,19 +83,37 @@ class Insecte extends BaseUser
     }
 
     /**
-     * @return mixed
+     * @param mixed $insect
      */
-    public function getInsect()
+    public function setInsect($insect = null)
     {
-        return $this->insect;
+        $this->insect = $insect;
+
+        return $this;
     }
 
     /**
-     * @param mixed $insect
+     * @param  Insecte $insecte
+     * @return void
      */
-    public function setInsect($insect)
+    public function ajouterAmis(Insecte $insecte)
     {
-        $this->insect = $insect;
+        if (!$this->amis->contains($insecte)) {
+            $this->amis->add($insecte);
+            $insecte->ajouterAmis($this);
+        }
+    }
+
+    /**
+     * @param  Insecte $insecte
+     * @return void
+     */
+    public function supprimerAmis(Insecte  $insecte)
+    {
+        if ($this->amis->contains($insecte)) {
+            $this->amis->removeElement($insecte);
+            $insecte->supprimerAmis($this);
+        }
     }
 
 

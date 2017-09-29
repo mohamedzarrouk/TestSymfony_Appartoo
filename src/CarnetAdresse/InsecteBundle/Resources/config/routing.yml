@@ -25,3 +25,7 @@ AjoutAmi:
 Supprimer_insecte:
     path:     /SupprimerInsecte/{id}
     defaults: { _controller: CarnetAdresseInsecteBundle:Insecte:supprimer }
+
+liste_amis:
+    path:     /ListeAmis
+    defaults: { _controller: CarnetAdresseInsecteBundle:Insecte:listeAmis }
