@@ -141,6 +141,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -639,7 +642,7 @@
       <workItem from="1506335428656" duration="8077000" />
       <workItem from="1506438531318" duration="17146000" />
       <workItem from="1506676198513" duration="918000" />
-      <workItem from="1506683147355" duration="105000" />
+      <workItem from="1506683147355" duration="442000" />
     </task>
     <task id="LOCAL-00001" summary="//">
       <created>1506676513510</created>
@@ -648,11 +651,18 @@
       <option name="project" value="LOCAL" />
       <updated>1506676513510</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="MAJ">
+      <created>1506683297000</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1506683297000</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103212000" />
+    <option name="totallyTimeSpent" value="103549000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -701,7 +711,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="//" />
-    <option name="LAST_COMMIT_MESSAGE" value="//" />
+    <MESSAGE value="MAJ" />
+    <option name="LAST_COMMIT_MESSAGE" value="MAJ" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
